@@ -4,7 +4,7 @@ FROM python:3.6-slim
 # Copy the requirements file into the image
 COPY ./requirements.txt /app/requirements.txt
 
-ENV SENTENCE_TRANSFORMERS_HOME=/app
+ENV TORCH_HOME=/app
 
 # Set the working directory to /app
 WORKDIR /app
