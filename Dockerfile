@@ -8,11 +8,11 @@ ENV TORCH_HOME=/app
 
 #RUN useradd -ms /bin/bash admin
 #RUN chown -R admin:admin /app
-#RUN chmod 755 /app
 #USER admin
 
 # Set the working directory to /app
 WORKDIR /app
+RUN chmod 755 /app
 
 # Install any needed packages specified in requirements.txt
 RUN pip install -r requirements.txt
