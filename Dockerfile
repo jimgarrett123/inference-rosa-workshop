@@ -6,6 +6,11 @@ COPY ./requirements.txt /app/requirements.txt
 
 ENV TORCH_HOME=/app
 
+RUN useradd -ms /bin/bash admin
+RUN chown -R admin:admin /app
+RUN chmod 755 /app
+USER admin
+
 # Set the working directory to /app
 WORKDIR /app
 
