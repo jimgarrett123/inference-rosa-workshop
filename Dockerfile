@@ -6,10 +6,10 @@ COPY ./requirements.txt /app/requirements.txt
 
 ENV TORCH_HOME=/app
 
-RUN useradd -ms /bin/bash admin
-RUN chown -R admin:admin /app
-RUN chmod 755 /app
-USER admin
+#RUN useradd -ms /bin/bash admin
+#RUN chown -R admin:admin /app
+#RUN chmod 755 /app
+#USER admin
 
 # Set the working directory to /app
 WORKDIR /app
@@ -18,8 +18,8 @@ WORKDIR /app
 RUN pip install -r requirements.txt
 
 # Copy every content from the local folder to the image
-COPY . /app
+#COPY . /app
+COPY . .
 
 # Run server
-#CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--port=80"]
-CMD ["/bin/sh -c"]
+CMD ["uvicorn", "main:app", "--host=0.0.0.0", "--port=80"]
